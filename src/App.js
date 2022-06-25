@@ -12,7 +12,7 @@ function App() {
 
     return new Promise((resolve, reject) => {
       axios
-        .post("http://localhost:3000/refresh", { token: refreshToken })
+        .post("http://localhost:5000/refresh", { token: refreshToken })
         .then((data) => {
           if (data.data.success === false) {
             setErr("Login again");
@@ -32,7 +32,7 @@ function App() {
     return new Promise((resolve, reject) => {
       axios
         .post(
-          "http://localhost:3000/protected",
+          "http://localhost:5000/protected",
           {},
           { headers: { authorization: `Bearer ${accessToken}` } }
         )
